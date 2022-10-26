@@ -1,31 +1,26 @@
-﻿/*Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+﻿/*Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 
-[3, 7, 23, 12] -> 19             
+b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)*/
 
-[-4, -6, 89, 6] -> 0*/
+Console.WriteLine("Введите значение b1: ");
+double b1 = Convert.ToDouble (Console.ReadLine());
+Console.WriteLine("Введите значение k1: ");
+double k1 = Convert.ToDouble (Console.ReadLine());
+Console.WriteLine("Введите значение b2: ");
+double b2 = Convert.ToDouble (Console.ReadLine());
+Console.WriteLine("Введите значение k2: ");
+double k2 = Convert.ToDouble (Console.ReadLine());
+double x = 0;
+double y = 0; 
 
-
-int[] Arr(int size, int minValue, int maxValue)
+void Сrossing ()
 {
-    int[] res = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        res[i] = new Random().Next(minValue, maxValue + 1);
-        Console.Write($"{res[i]} ");
-    }
-    return res;
+        x = ((b2 - b1) / (k1 - k2));
+
+        y = ((k1 * x) + b1);
+        y = ((k2 * x) + b2);
+Console.WriteLine($"точку пересечения двух прямых ({x}, {y})");
 }
 
-int[] array = Arr(10, -10, 77);
-Console.WriteLine();
-int even = 0;
-int odd = 0;
-int i = 0;
-int sum = 0;
-foreach (int y in array)
-{
-   
-   if ((i % 2)!=0) sum = sum + y;
-   i++; 
-}
-Console.WriteLine($"Сумма элементов стоящих на нечетных позициях = {sum}");
+Сrossing ();
